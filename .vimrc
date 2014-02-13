@@ -37,3 +37,5 @@ filetype plugin indent on     " required!
 " NOTE: comments after Bundle commands are not allowed.
 
 colorscheme xoria256
+set expandtab
+set ts=2
