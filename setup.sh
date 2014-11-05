@@ -6,9 +6,8 @@
 #!/bin/bash 
 pwd=$PWD
 
-ln -s $pwd/.vimrc ~/.vimrc
-ln -s $pwd/.bashrc ~/.bashrc
-ln -s $pwd/.bash_profile ~/.bash_profile
-ln -s $pwd/.tmux.conf ~/.tmux.conf
-ln -s $pwd/.vim/ ~/.vim
-
+cp $pwd/.vimrc ~/.vimrc
+cp $pwd/.bashrc ~/.bashrc
+cp $pwd/.bash_profile ~/.bash_profile
+cp $pwd/.tmux.conf ~/.tmux.conf
+cp -r $pwd/.vim/ ~/.vim
