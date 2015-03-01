@@ -3,7 +3,8 @@ filetype off                  " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
+au FileType cpp set foldmethod=syntax
+au FileType c set foldmethod=syntax
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
@@ -25,6 +26,12 @@ Bundle 'file:///Users/gmarik/path/to/plugin'
 " ...
 
 filetype plugin indent on     " required!
+syntax on
+syntax enable
+set ts=2
+set expandtab
+set sw=2
+set sts=2
 
 "
 " Brief help
@@ -35,7 +42,15 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 
-colorscheme xoria256
-set expandtab
-set ts=2
+highlight ColorColumn ctermbg=246 guibg=#2d2d2d
+let &colorcolumn="80,"
+
+set guifont=Neep\ 18
+
+hi Search cterm=NONE ctermfg=red ctermbg=yellow
+
+set hlsearch

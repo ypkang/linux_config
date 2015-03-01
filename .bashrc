@@ -2,8 +2,49 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+##############
+# Git Prompt #
+##############
+if [ -e "$HOME/.git-completion.bash" ] ; then
+        source ~/.git-completion.bash
+        export GIT_PS1_SHOWDIRTYSTATE=1
+        export GIT_PS1_SHOWSTASHSTATE=1
+        export GIT_PS1_DESCRIBE_STYLE=branch
+        GITPS1="\$(__git_ps1 ' [%s]')"
+fi
+
+##########
+# Prompt #
+##########
+#Colors
+black='\[\e[0;30m\]'
+dkgray='\[\e[1;30m\]'
+blue='\[\e[0;34m\]'
+ltblue='\[\e[1;34m\]'
+green='\[\e[0;32m\]'
+ltgreen='\[\e[1;32m\]'
+cyan='\[\e[0;36m\]'
+ltcyan='\[\e[1;36m\]'
+red='\[\e[0;31m\]'
+ltred='\[\e[1;31m\]'
+purple='\[\e[0;35m\]'
+ltpurple='\[\e[1;35m\]'
+brown='\[\e[0;33m\]'
+yellow='\[\e[1;33m\]'
+ltgray='\[\e[0;37m\]'
+white='\[\e[1;37m\]'
+nocolor='\[\e[0m\]'
+
+#Return Code
+cursor='\[\033[G\]'
+
+#The Prompt
+export PS1="$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1}${brown} \$ $nocolor"
+export PS1="${cursor}$PS1"
+
+
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+#[ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -53,17 +94,17 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+#if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -72,7 +113,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -hl --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -85,7 +126,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -106,8 +146,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export M5_PATH=/home/ypkang/research/fs_for_gem5/
-
 export TERM=screen-256color
-
-alias reload='source ~/.bashrc'
