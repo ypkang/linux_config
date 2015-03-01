@@ -18,3 +18,6 @@ $copy $pwd/tmux.conf ~/.tmux.conf
 $copy -r $pwd/vim/* ~/.vim/
 $copy $pwd/git-completion.bash ~/.git-completion.bash
 $copy $pwd/git-prompt.sh ~/.git-prompt.sh
+
+# Source bashrc
+source ~/.bashrc
