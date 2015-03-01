@@ -5,6 +5,8 @@
 ##############
 # Git Prompt #
 ##############
+source $HOME/.git-prompt.sh
+
 if [ -e "$HOME/.git-completion.bash" ] ; then
         source ~/.git-completion.bash
         export GIT_PS1_SHOWDIRTYSTATE=1
@@ -146,4 +148,22 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# alias reload 
+alias reload='source ~/.bashrc'
+
 export TERM=screen-256color
+
+export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
+export PATH=/bin:/usr/bin:/usr/local/bin:/sbin
+
+# Add CUDA bin & library paths:
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabi:/usr/lib/arm-linux-gnueabihf:$LD_LIBRARY_PATH
+
+# Temporary Caffe lib directory
+export LD_LIBRARY_PATH=/home/ypkang/caffe/distribute/lib:$LD_LIBRARY_PATH
+
+# Change timezone
+export TZ=America/New_York

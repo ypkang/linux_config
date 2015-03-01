@@ -7,9 +7,14 @@
 pwd=$PWD
 copy=cp
 
-$copy $pwd/.vimrc ~/.vimrc
-$copy $pwd/.bashrc ~/.bashrc
-$copy $pwd/.bash_profile ~/.bash_profile
-$copy $pwd/.tmux.conf ~/.tmux.conf
-$copy -r $pwd/.vim/ ~/.vim
+# Fetch submodule vundle
+git submodule init
+git submodule update
 
+$copy $pwd/vimrc ~/.vimrc
+$copy $pwd/bashrc ~/.bashrc
+$copy $pwd/bash_profile ~/.bash_profile
+$copy $pwd/tmux.conf ~/.tmux.conf
+$copy -r $pwd/vim/* ~/.vim/
+$copy $pwd/git-completion.bash ~/.git-completion.bash
+$copy $pwd/git-prompt.sh ~/.git-prompt.sh
