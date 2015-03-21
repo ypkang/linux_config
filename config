@@ -1,0 +1,39 @@
+Host tronlab
+	User ypkang
+	HostName 141.212.111.243
+
+Host simpool
+	User ypkang
+	HostName simpool.eecs.umich.edu
+
+Host simpool_node
+  User ypkang
+  Hostname 141.212.106.222
+
+Host gpu
+  User ypkang
+  Hostname 141.212.106.223
+
+Host blacklight
+  User kangy
+  Hostname blacklight.psc.xsede.org
+
+Host beast
+  User ypkang
+  Hostname 141.212.106.253
+
+Host kayla
+  User ypkang
+  Hostname 141.212.111.199
+
+Host sirius
+  User ypkang 
+  Hostname 141.212.106.240
+
+Host eecs_web
+  User ypkang
+  Hostname web.eecs.umich.edu
+
+Host jetson
+  User ypkang 
+  Hostname 141.212.111.219
