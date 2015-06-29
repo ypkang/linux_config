@@ -160,10 +160,5 @@ export PATH=/bin:/usr/bin:/usr/local/bin:/sbin
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
 
-export LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabi:/usr/lib/arm-linux-gnueabihf:$LD_LIBRARY_PATH
-
-# Temporary Caffe lib directory
-export LD_LIBRARY_PATH=/home/ypkang/caffe/distribute/lib:$LD_LIBRARY_PATH
-
 # Change timezone
 export TZ=America/New_York
