@@ -27,6 +27,7 @@ source ~/.bashrc
 git config --global user.email "ypkang@umich.edu"
 git config --global user.name "Yiping Kang"
 git config --global core.editor "vim"
+git config --global push.default matching
 
 # install this awesome font
 echo "remember to install the inconsolata font"
