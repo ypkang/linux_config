@@ -22,3 +22,12 @@ $copy $pwd/git-prompt.sh ~/.git-prompt.sh
 
 # Source bashrc
 source ~/.bashrc
+
+# set up git config
+git config --global user.email "ypkang@umich.edu"
+git config --global user.name "Yiping Kang"
+git config --global core.editor "vim"
+
+# install this awesome font
+echo "remember to install the inconsolata font"
+echo "sudo apt-get install font-inconsolata"
