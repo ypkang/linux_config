@@ -31,4 +31,4 @@ git config --global push.default matching
 
 # install this awesome font
 echo "remember to install the inconsolata font"
-echo "sudo apt-get install font-inconsolata"
+echo "sudo apt-get install fonts-inconsolata"
