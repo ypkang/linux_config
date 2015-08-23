@@ -45,13 +45,13 @@ cursor='\[\033[G\]'
 if [[ $VIRTUAL_ENV != "" ]]
 then
   # strip out the path and just leave the env name
-  venv="${ltpurple}(${VIRTUAL_ENV##*/})"
+  venv="${ltpurple}(${VIRTUAL_ENV##*/}) "
 else
   venv=''
 fi
 
 #The Prompt
-export PS1="$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1} ${venv} ${brown}\$ $nocolor"
+export PS1="$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1} ${venv}${brown}\$ $nocolor"
 export PS1="${cursor}$PS1"
 
 
