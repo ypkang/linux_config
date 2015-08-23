@@ -40,8 +40,18 @@ nocolor='\[\e[0m\]'
 #Return Code
 cursor='\[\033[G\]'
 
+# For python virtualenv
+# Get virtual env
+if [[ $VIRTUAL_ENV != "" ]]
+then
+  # strip out the path and just leave the env name
+  venv="${ltpurple}(${VIRTUAL_ENV##*/})"
+else
+  venv=''
+fi
+
 #The Prompt
-export PS1="$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1}${brown} \$ $nocolor"
+export PS1="$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1} ${venv} ${brown}\$ $nocolor"
 export PS1="${cursor}$PS1"
 
 
