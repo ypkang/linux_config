@@ -154,11 +154,11 @@ alias reload='source ~/.bashrc'
 export TERM=screen-256color
 
 export LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
-export PATH=/bin:/usr/bin:/usr/local/bin:/sbin
+export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/sbin
 
 # Add CUDA bin & library paths:
 export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 
 # Change timezone
 export TZ=America/New_York

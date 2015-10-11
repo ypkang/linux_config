@@ -9,7 +9,7 @@ au FileType c set foldmethod=syntax
 " required! 
 Bundle 'gmarik/vundle'
 
-filetype plugin indent on     " required!
+" filetype plugin indent on     " required!
 syntax on
 syntax enable
 set ts=2
