@@ -38,3 +38,5 @@ set guifont=Neep\ 18
 hi Search cterm=NONE ctermfg=red ctermbg=yellow
 
 set hlsearch
+
+imap jj <Esc>
