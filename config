@@ -2,6 +2,10 @@ Host tronlab
 	User ypkang
 	HostName 141.212.111.243
 
+Host crimson
+  User ypkang
+  Hostname 141.212.111.234
+
 Host simpool
 	User ypkang
 	HostName simpool.eecs.umich.edu
@@ -18,9 +22,9 @@ Host blacklight
   User kangy
   Hostname blacklight.psc.xsede.org
 
-Host beast
+Host clarity24
   User ypkang
-  Hostname 141.212.106.253
+  Hostname clarity24.eecs.umich.edu
 
 Host kayla
   User ypkang
@@ -28,7 +32,7 @@ Host kayla
 
 Host sirius
   User ypkang 
-  Hostname 141.212.106.240
+  Hostname 141.212.106.249
 
 Host eecs_web
   User ypkang
@@ -36,4 +40,32 @@ Host eecs_web
 
 Host jetson
   User ypkang 
+  Hostname 141.212.111.220
+
+Host jetson2
+  User ypkang
+  Hostname 141.212.111.218
+
+Host odroid
+  User odroid
   Hostname 141.212.111.219
+
+Host albatross
+  User ypkang 
+  Hostname 141.212.111.252
+
+Host clarity25
+  User ypkang
+  Hostname clarity25.eecs.umich.edu
+
+Host clarity11
+  User ypkang
+  Hostname clarity11.eecs.umich.edu
+
+Host clarity12
+  User ypkang
+  Hostname clarity12.eecs.umich.edu 
+
+Host nlp
+  User ypkang
+  Hostname rod.eecs.umich.edu
