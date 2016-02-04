@@ -2,41 +2,45 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
-au FileType cpp set foldmethod=syntax
-au FileType c set foldmethod=syntax
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+call vundle#begin()
 
-" filetype plugin indent on     " required!
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Yggdroot/indentLine'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
+
+call vundle#end()
+filetype plugin indent on
+
+" Colorscheme
+colorscheme jellybeans
+set background=dark
+
+" Font
+set guifont=Neep\ 18
+
+" Highlight search
+hi Search cterm=NONE ctermfg=red ctermbg=yellow
+set hlsearch
+
+" map jj to Esc
+imap jj <Esc>
+
+" auto line numbers
+set nu
+
+" syntax stuff
 syntax on
 syntax enable
+
+" tab width and expand tab
 set ts=2
 set expandtab
 set sw=2
 set sts=2
 
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-
-highlight ColorColumn ctermbg=246 guibg=#2d2d2d
-let &colorcolumn="80,"
-
-set guifont=Neep\ 18
-
-hi Search cterm=NONE ctermfg=red ctermbg=yellow
-
-set hlsearch
-
-imap jj <Esc>
+" nerdtree command
+map <C-b> :NERDTreeToggle<CR>
