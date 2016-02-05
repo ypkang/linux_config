@@ -32,3 +32,8 @@ git config --global push.default matching
 # install this awesome font
 echo "remember to install the inconsolata font"
 echo "sudo apt-get install fonts-inconsolata"
+
+# set up neovim
+mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+ln -s ~/.vim $XDG_CONFIG_HOME/nvim
+ln -s ~/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
