@@ -1,46 +1,42 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+call plug#end()
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Yggdroot/indentLine'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
+" tab stuff
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
-call vundle#end()
-filetype plugin indent on
-
-" Colorscheme
-colorscheme jellybeans
+" colorscheme
 set background=dark
+colorscheme wombat256mod
+syntax enable
+syntax on
 
-" Font
+" font
 set guifont=Neep\ 18
 
-" Highlight search
-hi Search cterm=NONE ctermfg=red ctermbg=yellow
+" highlight search
+hi Search cterm=NONE ctermfg=red ctermbg=yellow                              
 set hlsearch
 
-" map jj to Esc
+" map jj to ESC
 imap jj <Esc>
 
-" auto line numbers
+" show line and col numbers
 set nu
+set ruler
 
-" syntax stuff
-syntax on
-syntax enable
+" nerdtree
+nmap <silent> <C-b> :NERDTreeToggle<CR>
 
-" tab width and expand tab
-set ts=2
-set expandtab
-set sw=2
-set sts=2
+" close vim if only nerdtree is left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" nerdtree command
-map <C-b> :NERDTreeToggle<CR>
+" 80 characters
+set textwidth=80

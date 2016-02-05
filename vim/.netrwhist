@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/ypkang/git/sa-web/django/saweb/saemail/templates'
+let g:netrw_dirhist_2='/home/ypkang/git/clinc-code-jah/clinc-client/clinc_client'
+let g:netrw_dirhist_3='/home/ypkang/git/clinc-code-jah/clinc-client/clinc_client.egg-info'
+let g:netrw_dirhist_4='/home/ypkang/merge-field'
+let g:netrw_dirhist_5='/home/ypkang/git/clinc-code-jah/lucida/sentiment-analysis/kim-cnn/weights/user_models'
+let g:netrw_dirhist_6='/home/ypkang/git/clinc-code-jah/lucida/sentiment-analysis/kim-cnn/util/training'
+let g:netrw_dirhist_7='/home/ypkang/git/clinc-code-jah/lucida/sentiment-analysis/kim-cnn/weights/user_models'
