@@ -40,20 +40,21 @@ nocolor='\[\e[0m\]'
 #Return Code
 cursor='\[\033[G\]'
 
-# For python virtualenv
-# Get virtual env
-if [[ $VIRTUAL_ENV != "" ]]
-then
-  # strip out the path and just leave the env name
-  venv="${ltpurple}(${VIRTUAL_ENV##*/}) "
-else
-  venv=''
-fi
+# Determine active Python virtualenv details.
+function set_virtualenv {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${blue}[`basename \"$VIRTUAL_ENV\"`]${nocolor} "
+  fi
+}
+set_virtualenv
 
 #The Prompt
-export PS1="$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1} ${venv}${brown}\$ $nocolor"
+export PS1="${PYTHON_VIRTUALENV}$ltcyan@\H $ltblue\W $ltgreen[\j]$nocolor${ltred}${GITPS1} ${brown}\$ $nocolor"
 export PS1="${cursor}$PS1"
 
+alias activate="source venv/bin/activate;reload;"
 
 # If not running interactively, don't do anything
 #[ -z "$PS1" ] && return
