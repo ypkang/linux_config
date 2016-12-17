@@ -55,7 +55,7 @@ fi
 HOSTNAME="$nocolor\u@$yellow\h"
 DIR="$green\W"
 PROMPT="$nocolor\$"
-export PS1="$HOSTNAME:$DIR\n$GIT $PROMPT "
+export PS1="$HOSTNAME:$DIR\n$red$GIT $PROMPT "
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
